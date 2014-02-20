@@ -21,6 +21,7 @@
 		B4EC94FF18B69A8500FE75E5 /* UIDebuggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC94FE18B69A8500FE75E5 /* UIDebuggerTests.m */; };
 		B4EC950A18B69AB100FE75E5 /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC950918B69AB100FE75E5 /* ObjectManager.m */; };
 		B4EC950C18B6A13400FE75E5 /* Objects.json in Resources */ = {isa = PBXBuildFile; fileRef = B4EC950B18B6A13400FE75E5 /* Objects.json */; };
+		B4EC950F18B6B9FF00FE75E5 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC950E18B6B9FF00FE75E5 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		B4EC950818B69AB100FE75E5 /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectManager.h; sourceTree = "<group>"; };
 		B4EC950918B69AB100FE75E5 /* ObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectManager.m; sourceTree = "<group>"; };
 		B4EC950B18B6A13400FE75E5 /* Objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Objects.json; sourceTree = "<group>"; };
+		B4EC950D18B6B9FF00FE75E5 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		B4EC950E18B6B9FF00FE75E5 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 			children = (
 				B4EC94E818B69A8500FE75E5 /* AppDelegate.h */,
 				B4EC94E918B69A8500FE75E5 /* AppDelegate.m */,
+				B4EC950D18B6B9FF00FE75E5 /* JSONKit.h */,
+				B4EC950E18B6B9FF00FE75E5 /* JSONKit.m */,
 				B4EC950818B69AB100FE75E5 /* ObjectManager.h */,
 				B4EC950918B69AB100FE75E5 /* ObjectManager.m */,
 				B4EC950B18B6A13400FE75E5 /* Objects.json */,
@@ -250,6 +255,7 @@
 			files = (
 				B4EC950A18B69AB100FE75E5 /* ObjectManager.m in Sources */,
 				B4EC94EA18B69A8500FE75E5 /* AppDelegate.m in Sources */,
+				B4EC950F18B6B9FF00FE75E5 /* JSONKit.m in Sources */,
 				B4EC94E618B69A8500FE75E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

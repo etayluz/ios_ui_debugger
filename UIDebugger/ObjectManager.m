@@ -7,6 +7,7 @@
 //
 
 #import "ObjectManager.h"
+#import "JSONKit.h"
 
 @interface ObjectManager ()
 
@@ -52,20 +53,10 @@ static ObjectManager* UIManager = nil;
 
 -(void)refreshScreen
 {
-    //NSError* error = nil;
-    //NSString *json = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://localhost/UIManager/Objects.json"] encoding:NSASCIIStringEncoding error:&error];
-    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://localhost/UIManager/Objects.json"]];
-    NSArray *mainArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:NULL];
+    NSString *jsonString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://localhost/UIManager/Objects.json"] encoding:NSASCIIStringEncoding error:NULL];
     
-    for (NSDictionary *dictionary in mainArray) {
-         //NSLog(@"%@",[dictionary objectForKey:@"Name"]);
-        // Now you can store these two strings in that array or whatever populates your tableview ;)
-    }
-//    NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
-//    NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data
-//                                                                 options:kNilOptions
-//                                                                   error:&error];
-    //NSLog(@"%@",jsonResponse);
+    NSDictionary *deserializedData = [jsonString objectFromJSONString];
+
 }
 
 - (void)didReceiveMemoryWarning
