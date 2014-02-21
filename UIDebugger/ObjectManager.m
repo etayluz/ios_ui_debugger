@@ -53,8 +53,9 @@ static ObjectManager* UIManager = nil;
 
 -(void)refreshScreen
 {
-    NSString *jsonString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://localhost/UIManager/Objects.json"] encoding:NSASCIIStringEncoding error:NULL];
-    
+    NSString *jsonString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"Objects" ofType: @"json"] usedEncoding:nil error:nil];
+
+
     NSDictionary *deserializedData = [jsonString objectFromJSONString];
     NSDictionary *startButton = [deserializedData objectForKey:@"StartButton"];
     //NSLog(@"title=%@",[startButton objectForKey:@"title"]);
