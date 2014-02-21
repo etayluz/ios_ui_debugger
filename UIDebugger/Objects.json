@@ -2,11 +2,11 @@
   "StartButton":{
       "title": "Ben",
       "font": "30",
-      "x": "10",
+      "x": "40",
       "y": "20",
-      "width": "150",
-      "height": "100",
-      "red": "150",
+      "width": "250",
+      "height": "150",
+      "red": "159",
       "green": "130",
       "blue": "190"
   }

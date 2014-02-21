@@ -35,15 +35,10 @@ static ObjectManager* UIManager = nil;
     [self.startButton addTarget:self
                          action:@selector(nilSymbol)
                forControlEvents:UIControlEventTouchDown];
-    //[self.startButton setTitle:@"START" forState:UIControlStateNormal];
-    //self.startButton.frame = CGRectMake(0, 0, 100.0, 40);
-    //[playButton setBackgroundColor:[UIColor colorWithRed:(239/255.0) green:(111/255.0) blue:(13/255.0) alpha:1]];
-    //[self.startButton setBackgroundColor:[UIColor greenColor]];
-    //[self.startButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    //self.startButton.titleLabel.font = [UIFont systemFontOfSize:25];
     [self.view addSubview:self.startButton];
     [self registerView:self.startButton withLabel:@"StartButton"];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshScreen) userInfo:nil repeats:YES];
+    [self setObjects];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setObjects) userInfo:nil repeats:YES];
 }
 
 -(void)registerView:(id)view withLabel:(NSString*)viewLabel
@@ -51,10 +46,9 @@ static ObjectManager* UIManager = nil;
     [self.objectDictionary setObject:view forKey:viewLabel];
 }
 
--(void)refreshScreen
+-(void)setObjects
 {
-    NSString *jsonString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"Objects" ofType: @"json"] usedEncoding:nil error:nil];
-
+    NSString *jsonString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://localhost/UIManager/Objects.json"] encoding:NSASCIIStringEncoding error:NULL];
 
     NSDictionary *deserializedData = [jsonString objectFromJSONString];
     NSDictionary *startButton = [deserializedData objectForKey:@"StartButton"];
